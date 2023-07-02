@@ -1,0 +1,30 @@
+@import '../style/variable-default';
+
+.closeButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  box-sizing: content-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: @happy-modal-close-size;
+  height: @happy-modal-close-size;
+  color: @happy-modal-close-color;
+  cursor: pointer;
+  transition: color 0.2s ease-out;
+
+  &:hover,
+  &:focus {
+    color: @happy-icon-color-hover;
+  }
+}
+
+.closeIcon {
+  font-size: @happy-font-size-lg;
+  fill: currentColor;
+}
+
+.footerButton {
+  margin-left: 8px;
+}

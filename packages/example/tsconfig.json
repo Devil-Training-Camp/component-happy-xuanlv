@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "types": ["vite/client", "vite-plugin-seepln-icon/client"],
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "resolveJsonModule": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["./src", "vite.config.ts"]
+}

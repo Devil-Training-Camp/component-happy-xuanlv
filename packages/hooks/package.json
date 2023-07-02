@@ -1,0 +1,26 @@
+{
+  "name": "@xuan/hooks",
+  "version": "1.0.0",
+  "description": "基础 hooks",
+  "main": "src/index.ts",
+  "module": "es/index.js",
+  "types": "es/index.d.ts",
+  "files": [
+    "es",
+    "src"
+  ],
+  "scripts": {
+    "build": "rimraf es && tsc"
+  },
+  "devDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "peerDependencies": {
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}

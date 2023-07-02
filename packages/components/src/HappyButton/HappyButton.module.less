@@ -1,0 +1,203 @@
+@import '../style/variable-default';
+
+.happyButton {
+  position: relative;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  height: @happy-btn-size-base;
+  padding: 0 @happy-btn-padding-horizontal-base;
+  font-size: @happy-font-size-base;
+  font-weight: @happy-btn-font-weight;
+  line-height: 1;
+  color: @happy-btn-default-color;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  user-select: none;
+  background: @happy-btn-default-bg;
+  border: @happy-btn-border-width @happy-btn-border-style @happy-btn-default-border;
+  border-radius: @happy-btn-border-radius-base;
+  outline: 0;
+  box-shadow: @happy-btn-shadow;
+  transition: all 0.3s ease-out;
+  appearance: none;
+
+  &:not(.disabled) {
+    &:hover,
+    &:focus {
+      color: @happy-primary-color;
+      border-color: @happy-primary-color;
+    }
+
+    &:active,
+    &:global(.happy-button-active) {
+      color: @happy-primary-7;
+      border-color: @happy-primary-7;
+    }
+  }
+}
+
+.block {
+  width: 100%;
+}
+
+.primary:not(.disabled) {
+  color: @happy-btn-primary-color;
+  background: @happy-primary-color;
+  border-color: transparent;
+  box-shadow: @happy-btn-primary-shadow;
+
+  &:hover,
+  &:focus {
+    color: @happy-btn-primary-color;
+    background: @happy-primary-5;
+    border-color: transparent;
+  }
+
+  &:active,
+  &:global(.happy-button-active) {
+    color: @happy-btn-primary-color;
+    background: @happy-primary-7;
+  }
+}
+
+.dashed {
+  border-style: dashed;
+}
+
+.outline:not(.disabled) {
+  color: @happy-primary-color;
+  background: @happy-btn-default-bg;
+  border-color: @happy-primary-color;
+
+  &:not(.primary) {
+    &:hover {
+      color: @happy-primary-5;
+      border-color: @happy-primary-5;
+    }
+
+    &:active,
+    &:global(.happy-button-active) {
+      color: @happy-primary-7;
+      border-color: @happy-primary-7;
+    }
+  }
+}
+
+.danger:not(.disabled) {
+  color: @happy-btn-danger-bg;
+  background: transparent;
+  border-color: @happy-btn-danger-bg;
+
+  &:hover,
+  &:focus {
+    color: @happy-error-color-hover;
+    border-color: @happy-error-color-hover;
+  }
+
+  &:active,
+  &:global(.happy-button-active) {
+    color: @happy-error-color-active;
+    border-color: @happy-error-color-active;
+  }
+
+  &.primary {
+    color: @happy-btn-danger-color;
+    background: @happy-btn-danger-bg;
+    border-color: transparent;
+
+    &:hover,
+    &:focus {
+      background: @happy-error-color-hover;
+    }
+
+    &:active,
+    &:global(.happy-button-active) {
+      background: @happy-error-color-active;
+    }
+  }
+}
+
+.large {
+  height: @happy-btn-size-lg;
+  padding: 0 @happy-btn-padding-horizontal-lg;
+  font-size: @happy-btn-font-size-lg;
+}
+
+.small {
+  height: @happy-btn-size-sm;
+  padding: 0 @happy-btn-padding-horizontal-sm;
+  font-size: @happy-btn-font-size-sm;
+  border-radius: @happy-btn-border-radius-sm;
+}
+
+.circle,
+.onlyIcon {
+  width: @happy-btn-size-base;
+  height: @happy-btn-size-base;
+  padding: 0;
+
+  &.large {
+    width: @happy-btn-size-lg;
+    height: @happy-btn-size-lg;
+  }
+
+  &.small {
+    width: @happy-btn-size-sm;
+    height: @happy-btn-size-sm;
+  }
+}
+
+.circle {
+  padding: 0;
+  border-radius: 50%;
+}
+
+.onlyIcon {
+  .icon {
+    margin-right: 0;
+  }
+}
+
+.round {
+  border-radius: @happy-btn-size-lg;
+}
+
+.loading {
+  cursor: default;
+
+  &::before {
+    position: absolute;
+    inset: -1px;
+    z-index: 1;
+    pointer-events: none;
+    content: '';
+    background: white;
+    border-radius: inherit;
+    opacity: 0.35;
+    transition: opacity 0.2s;
+  }
+}
+
+.disabled {
+  color: @happy-btn-disable-color;
+  cursor: not-allowed;
+  background: @happy-btn-disable-bg;
+  border-color: @happy-btn-disable-border;
+
+  > * {
+    pointer-events: none;
+  }
+}
+
+.borderless {
+  border-width: 0;
+  box-shadow: none;
+}
+
+.icon {
+  margin-right: 8px;
+}

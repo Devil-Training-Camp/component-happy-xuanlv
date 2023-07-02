@@ -1,0 +1,125 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`HappyButton > 正常渲染 1`] = `
+<button
+  class="_happyButton_5fc01e"
+  type="button"
+>
+  按钮
+</button>
+`;
+
+exports[`HappyButton > 正常渲染 2`] = `
+<button
+  class="_happyButton_5fc01e _large_5fc01e"
+  type="button"
+>
+  按钮
+</button>
+`;
+
+exports[`HappyButton > 正常渲染 3`] = `
+<button
+  class="_happyButton_5fc01e _small_5fc01e"
+  type="button"
+>
+  按钮
+</button>
+`;
+
+exports[`HappyButton > 正常渲染 4`] = `
+<button
+  class="_happyButton_5fc01e _outline_5fc01e"
+  type="button"
+>
+  按钮
+</button>
+`;
+
+exports[`HappyButton > 正常渲染 5`] = `
+<button
+  class="_happyButton_5fc01e _danger_5fc01e"
+  type="button"
+>
+  按钮
+</button>
+`;
+
+exports[`HappyButton > 正常渲染 6`] = `
+<button
+  class="_happyButton_5fc01e _circle_5fc01e"
+  type="button"
+>
+  按钮
+</button>
+`;
+
+exports[`HappyButton > 正常渲染 7`] = `
+<button
+  class="_happyButton_5fc01e _round_5fc01e"
+  type="button"
+>
+  按钮
+</button>
+`;
+
+exports[`HappyButton > 正常渲染 8`] = `
+<button
+  class="_happyButton_5fc01e _primary_5fc01e"
+  type="button"
+>
+  按钮
+</button>
+`;
+
+exports[`HappyButton > 正常渲染 9`] = `
+<button
+  class="_happyButton_5fc01e _dashed_5fc01e"
+  type="button"
+>
+  按钮
+</button>
+`;
+
+exports[`HappyButton > 正常渲染 10`] = `
+<button
+  class="_happyButton_5fc01e"
+  type="button"
+>
+  <span
+    class="_icon_5fc01e"
+  >
+    <div>
+      图标
+    </div>
+  </span>
+  按钮
+</button>
+`;
+
+exports[`HappyButton > 正常渲染 11`] = `
+<button
+  class="_happyButton_5fc01e _borderless_5fc01e"
+  type="button"
+>
+  按钮
+</button>
+`;
+
+exports[`HappyButton > 空按钮 1`] = `
+<button
+  class="_happyButton_5fc01e"
+  type="button"
+/>
+`;
+
+exports[`HappyButton > 自定义链接标签 1`] = `
+<a
+  class="_happyButton_5fc01e"
+  href="https://react.dev/reference/react"
+  target="_blank"
+  type="button"
+>
+  链接
+</a>
+`;

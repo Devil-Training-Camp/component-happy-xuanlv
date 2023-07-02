@@ -1,0 +1,43 @@
+@import '../style/variable-default';
+
+.confirmBody {
+  display: flex;
+  flex-wrap: wrap;
+  padding: @happy-modal-confirm-body-padding;
+  font-size: @happy-font-size-base;
+  line-height: @happy-line-height-base;
+  word-wrap: break-word;
+}
+
+.confirmIcon {
+  flex-shrink: 0;
+  margin-right: 16px;
+  font-size: 22px;
+
+  .infoIcon {
+    font-size: 22px;
+    color: @happy-warning-color;
+    vertical-align: top;
+  }
+}
+
+.confirmContent {
+  flex: 1;
+}
+
+.confirmTitle {
+  display: block;
+  margin-bottom: 8px;
+  overflow: hidden;
+  font-size: @happy-modal-header-title-font-size;
+  font-weight: 500;
+  line-height: @happy-line-height-base;
+  color: @happy-modal-heading-color;
+  word-wrap: break-word;
+}
+
+.confirmFooter {
+  width: 100%;
+  margin-top: 24px;
+  text-align: right;
+}

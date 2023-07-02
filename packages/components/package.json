@@ -1,0 +1,38 @@
+{
+  "name": "@xuan/components",
+  "version": "0.1.0",
+  "description": "基础组件库",
+  "main": "src/index.ts",
+  "module": "es/index.jsx",
+  "types": "es/index.d.ts",
+  "files": [
+    "src",
+    "es"
+  ],
+  "scripts": {
+    "build": "npm run build-ts && npm run tsc",
+    "build-ts": "babel src --extensions \".ts\",\".tsx\" --out-dir es --out-file-extension .jsx --ignore **/__tests__ --presets=@babel/preset-typescript --copy-files --no-copy-ignored --delete-dir-on-start",
+    "tsc": "tsc -p tsconfig.build.json",
+    "watch": "npm run build-ts -- --watch"
+  },
+  "dependencies": {
+    "@xuan/hooks": "workspace:*"
+  },
+  "devDependencies": {
+    "@babel/cli": "~7.17.6",
+    "@babel/core": "^7.17.5",
+    "@babel/preset-typescript": "^7.16.7",
+    "@types/node": "~16.11.8",
+    "clsx": "^1.2.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "peerDependencies": {
+    "clsx": "^1.2.1",
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}

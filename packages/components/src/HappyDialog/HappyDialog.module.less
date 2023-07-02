@@ -1,0 +1,83 @@
+@import '../style/variable-default';
+@import '../style/animation';
+
+@happy-modal-footer-empty: 24px;
+
+.happyModalRoot {
+  position: relative;
+  z-index: @happy-modal-index;
+}
+
+.happyModalMask {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: @happy-modal-mask-bg;
+}
+
+.happyModalWrap {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  overflow-y: auto;
+
+  &.centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &:not(.centered) .happyModal {
+    top: 100px;
+
+    &::after {
+      position: absolute;
+      bottom: -@happy-modal-footer-empty;
+      left: 0;
+      width: 100%;
+      height: @happy-modal-footer-empty;
+      pointer-events: none;
+      content: '';
+    }
+  }
+}
+
+.happyModal {
+  position: relative;
+  width: auto;
+  max-width: calc(100vw - 32px);
+  margin: auto;
+  font-size: @happy-font-size-base;
+  font-variant: tabular-nums;
+  line-height: @happy-line-height-base;
+  color: @happy-text-color;
+  background-color: @happy-modal-content-bg;
+  background-clip: padding-box;
+  border-radius: @happy-border-radius-base;
+  box-shadow: @happy-box-shadow-base;
+}
+
+.animateIn {
+  opacity: 0;
+  animation: animate-in 0.3s @happy-animation-base both;
+}
+
+.animateOut {
+  opacity: 1;
+  animation: animate-out 0.3s @happy-animation-base both;
+}
+
+.fadeIn {
+  opacity: 0;
+  animation: fade-in 0.3s linear both;
+}
+
+.fadeOut {
+  opacity: 1;
+  animation: fade-out 0.3s linear both;
+}

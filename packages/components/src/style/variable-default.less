@@ -1,0 +1,344 @@
+@font-size-base: 12px;
+@font-size-sm: 12px;
+@font-size-lg: @font-size-base + 2px;
+@text-color: rgba(0, 0, 0, 0.65);
+@text-color-secondary: fade(#000, 45%);
+@black: #000;
+@outline-fade: 20%;
+
+@primary-color: #00b96b;
+@primary-1: tint(@primary-color, 90%);
+@primary-2: tint(@primary-color, 80%);
+@primary-3: tint(@primary-color, 60%);
+@primary-4: tint(@primary-color, 40%);
+@primary-5: tint(@primary-color, 20%);
+@primary-6: @primary-color;
+@primary-7: shade(@primary-color, 20%);
+@primary-8: shade(@primary-color, 40%);
+@primary-9: shade(@primary-color, 60%);
+@primary-10: shade(@primary-color, 80%);
+
+@btn-height-base: 28px;
+@btn-height-lg: 32px;
+@btn-height-sm: 24px;
+
+@line-height-base: 1.5715;
+@border-radius-base: 2px;
+
+@padding-lg: 24px; // containers
+@padding-md: 16px; // small containers and buttons
+@padding-sm: 12px; // Form controls and items
+@padding-xs: 8px; // small items
+@padding-xss: 4px; // more small
+
+@component-background: #fff;
+
+@border-color-base: hsv(0, 0, 85%); // base border outline a component
+@border-color-split: hsv(0, 0, 94%); // split border inside a component
+@border-width-base: 1px; // width of the border for a component
+@border-style-base: solid; // style of a components border
+
+@item-hover-bg: #f5f5f5;
+@item-active-bg: @primary-1;
+
+@box-shadow-base: 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08),
+  0 9px 28px 8px rgba(0, 0, 0, 0.05);
+
+@icon-color-hover: fade(@black, 75%);
+
+// Buttons
+@btn-font-weight: 400;
+@btn-border-radius-base: @happy-border-radius-base;
+@btn-border-radius-sm: @happy-border-radius-base;
+@btn-border-width: @border-width-base;
+@btn-border-style: @border-style-base;
+@btn-shadow: 0 2px 0 rgba(0, 0, 0, 0.015);
+@btn-primary-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+
+@btn-primary-color: #fff;
+
+@btn-default-color: @happy-text-color;
+@btn-default-bg: @component-background;
+@btn-default-border: @happy-border-color-base;
+
+@btn-danger-color: #fff;
+@btn-danger-bg: @happy-error-color;
+@btn-danger-border: @happy-error-color;
+
+@btn-disable-color: @happy-disabled-color;
+@btn-disable-bg: @happy-disabled-bg;
+@btn-disable-border: @happy-border-color-base;
+
+@btn-font-size-lg: @happy-font-size-lg;
+@btn-font-size-sm: @happy-font-size-sm;
+@btn-padding-horizontal-base: @padding-md - 1px;
+@btn-padding-horizontal-lg: @btn-padding-horizontal-base;
+@btn-padding-horizontal-sm: @padding-xs - 1px;
+
+@black-1: tint(@black, 90%);
+
+@red-base: #f5222d;
+@red-5: mix(@red-base, @component-background, 65%);
+@error-color: @red-5;
+@error-color-hover: tint(@red-5, 20%);
+@error-color-active: shade(@red-5, 20%);
+@error-color-outline: fade(@red-5, @outline-fade);
+@error-1: tint(@error-color, 90%);
+@error-2: tint(@error-color, 80%);
+@error-3: tint(@error-color, 70%);
+
+@info-color: @primary-color;
+@info-1: tint(@info-color, 90%);
+@info-2: tint(@info-color, 80%);
+@info-3: tint(@info-color, 70%);
+@info-4: tint(@info-color, 60%);
+@info-5: tint(@info-color, 20%);
+@info-6: @info-color;
+@info-7: shade(@info-color, 5%);
+
+@success-color: #52c41a;
+@success-1: tint(@success-color, 90%);
+@success-2: tint(@success-color, 80%);
+@success-3: tint(@success-color, 70%);
+@success-4: tint(@success-color, 60%);
+@success-5: tint(@success-color, 20%);
+@success-6: @success-color;
+@success-7: shade(@success-color, 5%);
+
+@warning-color: #faad14;
+@warning-1: tint(@warning-color, 90%);
+@warning-2: tint(@warning-color, 80%);
+@warning-3: tint(@warning-color, 70%);
+@warning-4: tint(@warning-color, 60%);
+@warning-5: tint(@warning-color, 20%);
+@warning-6: @warning-color;
+@warning-7: shade(@warning-color, 5%);
+
+@disabled-color: fade(#000, 25%);
+
+@background-color-base: hsv(0, 0, 96%); // Default grey background color
+@background-color-light: hsv(0, 0, 98%); // background of header and selected item
+@disabled-bg: @background-color-base;
+
+@zIndex-modal: 1000;
+
+@heading-color: fade(@black, 85%);
+@modal-header-padding-vertical: @padding-sm;
+@modal-header-padding-horizontal: @padding-lg;
+@modal-body-padding: @padding-lg;
+@modal-header-bg: @component-background;
+@modal-header-padding: @modal-header-padding-vertical @modal-header-padding-horizontal;
+@modal-header-border-width: @border-width-base;
+@modal-header-border-style: @border-style-base;
+@modal-header-title-line-height: 22px;
+@modal-header-title-font-size: @happy-font-size-lg;
+@modal-header-border-color-split: @border-color-split;
+@modal-header-close-size: @modal-header-title-line-height + @modal-header-padding-vertical * 2;
+@modal-content-bg: @component-background;
+@modal-heading-color: @happy-heading-color;
+@modal-close-color: @happy-text-color-secondary;
+@modal-footer-bg: transparent;
+@modal-footer-border-color-split: @border-color-split;
+@modal-footer-border-style: @border-style-base;
+@modal-footer-padding-vertical: 10px;
+@modal-footer-padding-horizontal: 16px;
+@modal-footer-border-width: @border-width-base;
+@modal-mask-bg: fade(@black, 45%);
+@modal-confirm-body-padding: 32px 32px 24px;
+
+@spin-dot-size-sm: 14px;
+@spin-dot-size: 20px;
+@spin-dot-size-lg: 32px;
+
+@happy-text-color: var(--happy-text-color, @text-color);
+@happy-text-color-secondary: var(--happy-text-color-secondary, @text-color-secondary);
+@happy-heading-color: var(--happy-heading-color, @heading-color);
+@happy-font-size-base: var(--happy-font-size-base, @font-size-base);
+@happy-font-size-sm: var(--happy-font-size-sm, @font-size-sm);
+@happy-font-size-lg: var(--happy-font-size-lg, @font-size-lg);
+@happy-line-height-base: var(--happy-line-height-base, @line-height-base);
+
+@happy-padding-lg: var(--happy-padding-lg, @padding-lg);
+@happy-padding-md: var(--happy-padding-md, @padding-md);
+@happy-padding-sm: var(--happy-padding-sm, @padding-sm);
+@happy-padding-xs: var(--happy-padding-xs, @padding-xs);
+@happy-padding-xss: var(--happy-padding-xss, @padding-xss);
+
+@happy-component-background: var(--happy-component-background, @component-background);
+
+@happy-border-width-base: var(--happy-border-width-base, @border-width-base);
+@happy-border-style-base: var(--happy-border-style-base, @border-style-base);
+@happy-border-color-base: var(--happy-border-color-base, @border-color-base);
+@happy-border-color-split: var(--happy-border-color-split, @border-color-split);
+@happy-box-shadow-base: var(--happy-box-shadow-base, @box-shadow-base);
+
+@happy-border-radius-base: var(--happy-border-radius-base, @border-radius-base);
+@happy-item-hover-bg: var(--happy-item-hover-bg, @item-hover-bg);
+@happy-item-active-bg: var(--happy-item-active-bg, @item-active-bg);
+
+@happy-primary-color: var(--happy-primary-color, @primary-color);
+@happy-primary-1: var(--happy-primary-1, @primary-1);
+@happy-primary-2: var(--happy-primary-2, @primary-2);
+@happy-primary-3: var(--happy-primary-3, @primary-3);
+@happy-primary-4: var(--happy-primary-4, @primary-4);
+@happy-primary-5: var(--happy-primary-5, @primary-5);
+@happy-primary-6: var(--happy-primary-6, @primary-6);
+@happy-primary-7: var(--happy-primary-7, @primary-7);
+@happy-primary-8: var(--happy-primary-8, @primary-8);
+@happy-primary-9: var(--happy-primary-9, @primary-9);
+@happy-primary-10: var(--happy-primary-10, @primary-10);
+@happy-primary-color-hover: var(--happy-primary-color-hover, @happy-primary-5);
+@happy-primary-color-active: var(--happy-primary-color-active, @happy-primary-7);
+@happy-primary-color-outline: var(
+  --happy-primary-color-outline,
+  fade(@primary-color, @outline-fade)
+);
+
+@happy-primary-fade-1: var(--happy-primary-fade-1, fade(@primary-color, 10%));
+@happy-primary-fade-2: var(--happy-primary-fade-2, fade(@primary-color, 20%));
+@happy-primary-fade-3: var(--happy-primary-fade-3, fade(@primary-color, 30%));
+@happy-primary-fade-4: var(--happy-primary-fade-4, fade(@primary-color, 40%));
+@happy-primary-fade-5: var(--happy-primary-fade-5, fade(@primary-color, 50%));
+@happy-primary-fade-6: var(--happy-primary-fade-6, fade(@primary-color, 60%));
+@happy-primary-fade-7: var(--happy-primary-fade-7, fade(@primary-color, 70%));
+@happy-primary-fade-8: var(--happy-primary-fade-8, fade(@primary-color, 80%));
+@happy-primary-fade-9: var(--happy-primary-fade-9, fade(@primary-color, 90%));
+
+@happy-icon-color-hover: var(--happy-icon-color-hover, @icon-color-hover);
+@happy-error-color: var(--happy-error-color, @error-color);
+@happy-error-color-hover: var(--happy-error-color-hover, @error-color-hover);
+@happy-error-color-active: var(--happy-error-color-active, @error-color-active);
+@happy-error-color-outline: var(--happy-error-color-outline, @error-color-outline);
+@happy-error-1: var(--happy-error-1, @error-1);
+@happy-error-2: var(--happy-error-2, @error-2);
+@happy-error-3: var(--happy-error-3, @error-3);
+
+@happy-info-color: var(--happy-info-color, @info-color);
+@happy-info-color-hover: var(--happy-info-color-hover, @info-5);
+@happy-info-color-active: var(--happy-info-color-active, @info-7);
+@happy-info-color-outline: var(--happy-info-color-outline, fade(@info-color, @outline-fade));
+@happy-info-1: var(--happy-info-1, @info-1);
+@happy-info-2: var(--happy-info-2, @info-2);
+@happy-info-3: var(--happy-info-3, @info-3);
+
+@happy-success-color: var(--happy-success-color, @success-color);
+@happy-success-color-hover: var(--happy-success-color-hover, @success-5);
+@happy-success-color-active: var(--happy-success-color-active, @success-7);
+@happy-success-color-outline: var(
+  --happy-success-color-outline,
+  fade(@success-color, @outline-fade)
+);
+@happy-success-1: var(--happy-success-1, @success-1);
+@happy-success-2: var(--happy-success-2, @success-2);
+@happy-success-3: var(--happy-success-3, @success-3);
+
+@happy-warning-color: var(--happy-warning-color, @warning-color);
+@happy-warning-color-hover: var(--happy-warning-color-hover, @warning-5);
+@happy-warning-color-active: var(--happy-warning-color-active, @warning-7);
+@happy-warning-color-outline: var(
+  --happy-warning-color-outline,
+  fade(@warning-color, @outline-fade)
+);
+@happy-warning-1: var(--happy-warning-1, @warning-1);
+@happy-warning-2: var(--happy-warning-2, @warning-2);
+@happy-warning-3: var(--happy-warning-3, @warning-3);
+
+@happy-disabled-color: var(--happy-disabled-color, @disabled-color);
+@happy-background-color-base: var(--happy-background-color-base, @background-color-base);
+@happy-background-color-light: var(--happy-background-color-light, @background-color-light);
+@happy-disabled-bg: var(--happy-disabled-bg, @disabled-bg);
+
+// Button
+@happy-btn-font-weight: var(--happy-btn-font-weight, @btn-font-weight);
+@happy-btn-border-radius-base: var(--happy-btn-border-radius-base, @btn-border-radius-base);
+@happy-btn-border-radius-sm: var(--happy-btn-border-radius-sm, @btn-border-radius-sm);
+@happy-btn-border-width: var(--happy-btn-border-width, @btn-border-width);
+@happy-btn-border-style: var(--happy-btn-border-style, @btn-border-style);
+@happy-btn-shadow: var(--happy-btn-shadow, @btn-shadow);
+@happy-btn-primary-shadow: var(--happy-btn-primary-shadow, @btn-primary-shadow);
+
+@happy-btn-primary-color: var(--happy-btn-primary-color, @btn-primary-color);
+
+@happy-btn-default-color: var(--happy-btn-default-color, @btn-default-color);
+@happy-btn-default-bg: var(--happy-btn-default-bg, @btn-default-bg);
+@happy-btn-default-border: var(--happy-btn-default-border, @btn-default-border);
+
+@happy-btn-danger-color: var(--happy-btn-danger-color, @btn-danger-color);
+@happy-btn-danger-bg: var(--happy-btn-danger-bg, @btn-danger-bg);
+@happy-btn-danger-border: var(--happy-btn-danger-border, @btn-danger-border);
+
+@happy-btn-disable-color: var(--happy-btn-disable-color, @btn-disable-color);
+@happy-btn-disable-bg: var(--happy-btn-disable-bg, @btn-disable-bg);
+@happy-btn-disable-border: var(--happy-btn-disable-border, @btn-disable-border);
+
+@happy-btn-font-size-lg: var(--happy-btn-font-size-lg, @btn-font-size-lg);
+@happy-btn-font-size-sm: var(--happy-btn-font-size-sm, @btn-font-size-sm);
+@happy-btn-padding-horizontal-base: var(
+  --happy-btn-padding-horizontal-base,
+  @btn-padding-horizontal-base
+);
+@happy-btn-padding-horizontal-lg: var(
+  --happy-btn-padding-horizontal-lg,
+  @btn-padding-horizontal-lg
+);
+@happy-btn-padding-horizontal-sm: var(
+  --happy-btn-padding-horizontal-sm,
+  @btn-padding-horizontal-sm
+);
+
+@happy-btn-size-base: var(--happy-btn-height-base, @btn-height-base);
+@happy-btn-size-lg: var(--ux-btn-height-lg, @btn-height-lg);
+@happy-btn-size-sm: var(--ux-btn-height-sm, @btn-height-sm);
+
+@happy-animation-base: var(--ux-animation-base, cubic-bezier(0.25, 0.8, 0.25, 1));
+
+// Modal
+@happy-modal-index: var(--ux-modal-index, @zIndex-modal);
+@happy-modal-body-padding: var(--ux-modal-body-padding, @modal-body-padding);
+@happy-modal-header-bg: var(--ux-modal-header-bg, @modal-header-bg);
+@happy-modal-header-padding: var(--ux-modal-header-padding, @modal-header-padding);
+@happy-modal-header-border-width: var(--ux-modal-header-border-width, @modal-header-border-width);
+@happy-modal-header-border-style: var(--ux-modal-header-border-style, @modal-header-border-style);
+@happy-modal-header-title-line-height: var(
+  --ux-modal-header-title-line-height,
+  @modal-header-title-line-height
+);
+@happy-modal-header-title-font-size: var(
+  --ux-modal-header-title-font-size,
+  @modal-header-title-font-size
+);
+@happy-modal-header-border-color-split: var(
+  --ux-modal-header-border-color-split,
+  @modal-header-border-color-split
+);
+@happy-modal-close-size: var(--ux-modal-close-size, @modal-header-close-size);
+@happy-modal-content-bg: var(--ux-modal-content-bg, @modal-content-bg);
+@happy-modal-heading-color: var(--ux-modal-heading-color, @modal-heading-color);
+@happy-modal-close-color: var(--ux-modal-close-color, @modal-close-color);
+@happy-modal-footer-bg: var(--ux-modal-footer-bg, @modal-footer-bg);
+@happy-modal-footer-border-color-split: var(
+  --ux-modal-footer-border-color-split,
+  @modal-footer-border-color-split
+);
+@happy-modal-footer-border-style: var(--ux-modal-footer-border-style, @modal-footer-border-style);
+@happy-modal-footer-padding-vertical: var(
+  --ux-modal-footer-padding-vertical,
+  @modal-footer-padding-vertical
+);
+@happy-modal-footer-padding-horizontal: var(
+  --ux-modal-footer-padding-horizontal,
+  @modal-footer-padding-horizontal
+);
+@happy-modal-footer-border-width: var(--ux-modal-footer-border-width, @modal-footer-border-width);
+@happy-modal-mask-bg: var(--ux-modal-mask-bg, @modal-mask-bg);
+@happy-modal-confirm-body-padding: var(
+  --ux-modal-confirm-body-padding,
+  @modal-confirm-body-padding
+);
+
+// Spin
+@happy-spin-dot-size-sm: var(--ux-spin-dot-size-sm, @spin-dot-size-sm);
+@happy-spin-dot-size: var(--ux-spin-dot-size, @spin-dot-size);
+@happy-spin-dot-size-lg: var(--ux-spin-dot-size-lg, @spin-dot-size-lg);
+@happy-spin-mask-bg: var(--ux-spin-mask-bg, rgb(255 255 255 / 50%));
+@happy-spin-index: var(--ux-spin-index, 4);

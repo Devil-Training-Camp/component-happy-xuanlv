@@ -1,0 +1,46 @@
+@import '@xuan/components/src/style/variable-default';
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+
+  a {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 5px 40px 5px 10px;
+    font-size: 16px;
+    font-weight: normal;
+    color: black;
+    text-decoration: none;
+  }
+
+  .caption {
+    padding-left: 30px;
+    margin-top: 20px;
+    font-size: 12px;
+    line-height: 12px;
+    color: #999;
+    user-select: none;
+  }
+
+  .link {
+    position: relative;
+    display: block;
+    padding: 6px 0 6px 30px;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #595959;
+    text-overflow: ellipsis;
+
+    &:hover {
+      color: @happy-primary-color;
+    }
+
+    &.active {
+      color: @happy-primary-color;
+      background: @happy-primary-1;
+      border-right: 2px solid @happy-primary-color;
+    }
+  }
+}

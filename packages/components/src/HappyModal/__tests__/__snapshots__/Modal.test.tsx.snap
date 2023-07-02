@@ -1,0 +1,109 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`HappyModal > 正常渲染 1`] = `
+<div
+  style="overflow: hidden;"
+>
+  <div
+    class="_happyModalRoot_c5e8fd"
+    tabindex="-1"
+  >
+    <div
+      class="_happyModalMask_c5e8fd _fadeIn_c5e8fd"
+    />
+    <div
+      class="_happyModalWrap_c5e8fd"
+    >
+      <div
+        class="_happyModal_c5e8fd _animateIn_c5e8fd"
+        role="dialog"
+        style="width: 416px;"
+      >
+        <span
+          class="_closeButton_472604"
+        >
+          <svg
+            class="_closeIcon_472604"
+            height="1em"
+            version="1.1"
+            viewBox="0 0 32 32"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M17.62 16l8.2-9.78c0.036-0.043 0.059-0.099 0.059-0.16 0-0.136-0.11-0.247-0.246-0.248h-2.494c-0.154 0.002-0.291 0.071-0.383 0.179l-0.001 0.001-6.766 8.062-6.768-8.064c-0.092-0.109-0.229-0.178-0.383-0.178-0.001 0-0.001 0-0.002 0h-2.492c-0.001 0-0.001 0-0.002 0-0.137 0-0.248 0.111-0.248 0.248 0 0.062 0.023 0.119 0.061 0.162l-0-0 8.202 9.778-8.202 9.78c-0.036 0.043-0.059 0.099-0.059 0.16 0 0.137 0.111 0.248 0.248 0.248 0 0 0 0 0.001 0h2.494c0.154-0.002 0.291-0.071 0.383-0.179l0.001-0.001 6.766-8.064 6.766 8.066c0.092 0.109 0.229 0.178 0.383 0.178 0.001 0 0.001 0 0.002 0h2.494c0.001 0 0.001 0 0.002 0 0.137 0 0.248-0.111 0.248-0.248 0-0.062-0.023-0.119-0.061-0.162l0 0-8.204-9.778z"
+            />
+          </svg>
+        </span>
+        <div
+          class="_modalContent_a1e552"
+        >
+          Modal Content
+        </div>
+        <div
+          class="_modalFooter_a1e552"
+        >
+          <button
+            class="_happyButton_5fc01e _footerButton_472604"
+            type="button"
+          >
+            取消
+          </button>
+          <button
+            class="_happyButton_5fc01e _footerButton_472604 _primary_5fc01e"
+            type="button"
+          >
+            确定
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`HappyModal > 渲染无 footer 1`] = `
+<div
+  style="overflow: hidden;"
+>
+  <div
+    class="_happyModalRoot_c5e8fd"
+    tabindex="-1"
+  >
+    <div
+      class="_happyModalMask_c5e8fd _fadeIn_c5e8fd"
+    />
+    <div
+      class="_happyModalWrap_c5e8fd"
+    >
+      <div
+        class="_happyModal_c5e8fd _animateIn_c5e8fd"
+        role="dialog"
+        style="width: 416px;"
+      >
+        <span
+          class="_closeButton_472604"
+        >
+          <svg
+            class="_closeIcon_472604"
+            height="1em"
+            version="1.1"
+            viewBox="0 0 32 32"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M17.62 16l8.2-9.78c0.036-0.043 0.059-0.099 0.059-0.16 0-0.136-0.11-0.247-0.246-0.248h-2.494c-0.154 0.002-0.291 0.071-0.383 0.179l-0.001 0.001-6.766 8.062-6.768-8.064c-0.092-0.109-0.229-0.178-0.383-0.178-0.001 0-0.001 0-0.002 0h-2.492c-0.001 0-0.001 0-0.002 0-0.137 0-0.248 0.111-0.248 0.248 0 0.062 0.023 0.119 0.061 0.162l-0-0 8.202 9.778-8.202 9.78c-0.036 0.043-0.059 0.099-0.059 0.16 0 0.137 0.111 0.248 0.248 0.248 0 0 0 0 0.001 0h2.494c0.154-0.002 0.291-0.071 0.383-0.179l0.001-0.001 6.766-8.064 6.766 8.066c0.092 0.109 0.229 0.178 0.383 0.178 0.001 0 0.001 0 0.002 0h2.494c0.001 0 0.001 0 0.002 0 0.137 0 0.248-0.111 0.248-0.248 0-0.062-0.023-0.119-0.061-0.162l0 0-8.204-9.778z"
+            />
+          </svg>
+        </span>
+        <div
+          class="_modalContent_a1e552"
+        >
+          Modal Content
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

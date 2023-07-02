@@ -1,0 +1,39 @@
+@import '../style/variable-default';
+
+.modalHeader {
+  padding: @happy-modal-header-padding;
+  color: @happy-text-color;
+  background: @happy-modal-header-bg;
+  border-bottom: @happy-modal-header-border-width @happy-modal-header-border-style
+    @happy-modal-header-border-color-split;
+  border-radius: @happy-border-radius-base @happy-border-radius-base 0 0;
+}
+
+.modalTitle {
+  margin: 0;
+  font-size: @happy-modal-header-title-font-size;
+  font-weight: bold;
+  line-height: @happy-modal-header-title-line-height;
+  color: @happy-modal-heading-color;
+  word-wrap: break-word;
+}
+
+.modalContent {
+  padding: @happy-modal-body-padding;
+  font-size: @happy-font-size-base;
+  line-height: @happy-line-height-base;
+  word-wrap: break-word;
+}
+
+.modalFooter {
+  padding: @happy-modal-footer-padding-vertical @happy-modal-footer-padding-horizontal;
+  text-align: right;
+  background: @happy-modal-footer-bg;
+  border-top: @happy-modal-footer-border-width @happy-modal-footer-border-style
+    @happy-modal-footer-border-color-split;
+  border-radius: 0 0 @happy-border-radius-base @happy-border-radius-base;
+}
+
+.footerButton {
+  margin-left: 8px;
+}

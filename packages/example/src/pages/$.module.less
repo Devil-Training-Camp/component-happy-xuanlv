@@ -1,0 +1,32 @@
+@import '@xuan/components/src/style/variable-default';
+
+@app-header-height: 50px;
+@app-menu-width: 200px;
+
+.header {
+  width: 100%;
+  height: @app-header-height;
+}
+
+.body {
+  display: flex;
+  width: 100%;
+}
+
+.navigation {
+  position: sticky;
+  top: @app-header-height;
+  flex: none;
+  width: @app-menu-width;
+  height: calc(100vh - @app-header-height);
+  overflow-y: auto;
+  border-right: 1px solid #d7d8e099;
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 20px;
+  overflow-x: hidden;
+}

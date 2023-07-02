@@ -1,0 +1,48 @@
+@import '../style/variable-default';
+@import '../style/animation';
+
+.happySpin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: @happy-font-size-base;
+  color: @happy-primary-color;
+  cursor: default;
+
+  & > svg {
+    font-size: @happy-spin-dot-size;
+    fill: currentcolor;
+    animation: rotate 1s linear infinite;
+  }
+
+  &.small > svg {
+    font-size: @happy-spin-dot-size-sm;
+  }
+
+  &.large > svg {
+    font-size: @happy-spin-dot-size-lg;
+  }
+
+  &.delay {
+    opacity: 0;
+    animation: fade-in 0.3s ease-out both;
+  }
+
+  &.full {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: @happy-spin-index;
+    width: 100%;
+    height: 100%;
+
+    &:not(:only-child) {
+      background-color: @happy-spin-mask-bg;
+    }
+  }
+
+  .tip {
+    margin-top: 4px;
+  }
+}
