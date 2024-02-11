@@ -1,0 +1,43 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`HappySpace > 正常渲染 1`] = `
+<div
+  class="_happySpace_056a30 _horizontal_056a30"
+  style="--ux-space-horizontal-size: 8px; --ux-space-vertical-size: 8px; align-items: center;"
+/>
+`;
+
+exports[`HappySpace > 正常渲染 2`] = `
+<div
+  class="_happySpace_056a30 _horizontal_056a30"
+  style="--ux-space-horizontal-size: 16px; --ux-space-vertical-size: 16px; align-items: center;"
+/>
+`;
+
+exports[`HappySpace > 正常渲染 3`] = `
+<div
+  class="_happySpace_056a30 _horizontal_056a30"
+  style="--ux-space-horizontal-size: 24px; --ux-space-vertical-size: 24px; align-items: center;"
+/>
+`;
+
+exports[`HappySpace > 正常渲染 4`] = `
+<div
+  class="_happySpace_056a30 _horizontal_056a30"
+  style="--ux-space-horizontal-size: 8px; --ux-space-vertical-size: 8px; align-items: center;"
+/>
+`;
+
+exports[`HappySpace > 正常渲染 5`] = `
+<div
+  class="_happySpace_056a30 _horizontal_056a30"
+  style="--ux-space-horizontal-size: 8px; --ux-space-vertical-size: 12px; align-items: center;"
+/>
+`;
+
+exports[`HappySpace > 正常渲染 6`] = `
+<div
+  class="_happySpace_056a30 _vertical_056a30"
+  style="--ux-space-horizontal-size: 8px; --ux-space-vertical-size: 8px;"
+/>
+`;

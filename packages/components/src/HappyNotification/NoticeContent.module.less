@@ -1,0 +1,104 @@
+@import '../style/variable-default';
+
+.noticeContent {
+  display: flex;
+  width: @happy-notification-width;
+  max-width: 100%;
+  padding: @happy-padding-md;
+  margin-bottom: 24px;
+  pointer-events: all;
+  background: @happy-component-background;
+  border-radius: @happy-border-radius-base;
+  box-shadow: @happy-notification-shadow;
+  animation: notification-fade-in @happy-animation-base 0.4s both;
+}
+
+.main {
+  flex: 1;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.message {
+  flex: 1;
+  overflow: hidden;
+  font-size: @happy-notification-message-font-size;
+  font-weight: @happy-notification-message-font-weight;
+  line-height: 1.5;
+  color: @happy-notification-message-color;
+  text-overflow: ellipsis;
+  letter-spacing: 0;
+  word-break: break-all;
+  white-space: nowrap;
+}
+
+.icon {
+  flex: none;
+  overflow: hidden;
+
+  svg {
+    margin-right: @happy-padding-sm;
+    font-size: 22px;
+  }
+}
+
+.closeIcon {
+  flex: none;
+  cursor: pointer;
+
+  svg {
+    font-size: @happy-notification-close-icon;
+    color: @happy-text-color;
+  }
+
+  &:hover {
+    color: @happy-error-color;
+  }
+}
+
+.description {
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 22px;
+  color: rgb(0 0 0 / 65%);
+  letter-spacing: 0;
+}
+
+.extra {
+  flex: none;
+  margin-top: 15px;
+  font-size: @happy-font-size-sm;
+}
+
+.infoIcon {
+  color: @happy-info-color;
+}
+
+.successIcon {
+  color: @happy-success-color;
+}
+
+.errorIcon {
+  color: @happy-error-color;
+}
+
+.warnIcon {
+  color: @happy-warning-color;
+}
+
+@keyframes notification-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

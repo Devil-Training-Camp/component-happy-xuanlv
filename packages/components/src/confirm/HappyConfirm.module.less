@@ -11,18 +11,22 @@
 
 .confirmIcon {
   flex-shrink: 0;
-  margin-right: 16px;
+  margin-right: @happy-padding-sm;
   font-size: 22px;
 
-  .infoIcon {
-    font-size: 22px;
+  .icon {
     color: @happy-warning-color;
     vertical-align: top;
+  }
+
+  > svg {
+    font-size: 20px;
   }
 }
 
 .confirmContent {
   flex: 1;
+  max-width: 100%;
 }
 
 .confirmTitle {
@@ -30,7 +34,7 @@
   margin-bottom: 8px;
   overflow: hidden;
   font-size: @happy-modal-header-title-font-size;
-  font-weight: 500;
+  font-weight: bold;
   line-height: @happy-line-height-base;
   color: @happy-modal-heading-color;
   word-wrap: break-word;

@@ -1,20 +1,18 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
+import { MacScrollbar } from 'mac-scrollbar';
 import Header from '@/components/Header';
 import Menu from '@/components/Menu';
-import styles from './$.module.less';
 
 function BasicLayout() {
   return (
     <>
-      <div className={styles.header}>
-        <Header />
-      </div>
-      <div className={styles.body}>
-        <div className={styles.navigation}>
+      <Header />
+      <div className="flex w-full">
+        <MacScrollbar className="bordered sticky top-12 h-[calc(100vh_-_48px)] w-52 flex-none overflow-y-auto border-r border-slate-200">
           <Menu />
-        </div>
-        <div className={styles.content}>
+        </MacScrollbar>
+        <div className="flex flex-1 flex-col overflow-x-hidden p-5">
           <Outlet />
         </div>
       </div>

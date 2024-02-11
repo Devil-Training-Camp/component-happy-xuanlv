@@ -8,6 +8,7 @@ dist
 es
 .temp
 dist-ssr
+.swc
 
 # misc
 .DS_Store

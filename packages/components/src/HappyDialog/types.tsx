@@ -78,10 +78,15 @@ export interface HappyDialogProps {
    */
   zIndex?: number;
   /**
-   * 动画名称
+   * 进入动画
    */
-  animation?: {
-    in?: string;
-    out?: string;
-  };
+  animationEnter?: (element: HTMLElement) => Animation;
+  /**
+   * 离开动画
+   */
+  animationLeave?: (element: HTMLElement) => Animation;
+  /**
+   * root 节点属性
+   */
+  rootAttrs?: React.HTMLAttributes<HTMLDivElement>;
 }

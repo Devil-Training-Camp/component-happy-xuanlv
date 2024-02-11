@@ -1,6 +1,7 @@
 import React from 'react';
+import IconWarning from '../icons/icon-warning-fill.svg?react';
 import type { HappyConfirmProps } from './types';
-import { CloseButton, FooterCancelButton, FooterOkButton, IconInfoCircle } from '../HappyModal/ModalWidget';
+import { CloseButton, FooterCancelButton, FooterOkButton } from '../HappyModal/ModalWidget';
 import { HappyDialog } from '../HappyDialog';
 import styles from './HappyConfirm.module.less';
 
@@ -57,7 +58,7 @@ export default function HappyConfirm({
       <div className={styles.confirmBody} style={bodyStyle}>
         {icon === null ? null : (
           <div className={styles.confirmIcon}>
-            {icon ?? <IconInfoCircle className={styles.infoIcon} />}
+            {icon ?? <IconWarning className={styles.icon} />}
           </div>
         )}
 

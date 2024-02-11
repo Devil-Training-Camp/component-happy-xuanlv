@@ -1,0 +1,21 @@
+@import '../style/variable-default';
+
+.happySpace {
+  display: flex;
+  margin-bottom: calc(var(--ux-space-vertical-size) * -1);
+
+  > * {
+    flex: none;
+    margin-bottom: var(--ux-space-vertical-size);
+  }
+}
+
+.horizontal {
+  > :not(:last-child) {
+    margin-right: var(--ux-space-horizontal-size);
+  }
+}
+
+.vertical {
+  flex-direction: column;
+}

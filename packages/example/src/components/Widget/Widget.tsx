@@ -1,35 +1,45 @@
-import styled from 'styled-components';
+/* eslint-disable react/prop-types */
+import React from 'react';
+import clsx from 'clsx';
 
-export const Widget = styled.div`
-  display: flex;
-  align-items: center;
-  margin-bottom: 12px;
-  font-size: 14px;
-  gap: 6px;
+export function Widget({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
+  return (
+    <div
+      className={clsx(
+        className,
+        'mb-3 flex items-center gap-1.5 [&_>_:first-child]:min-w-[100px] [&_>_:first-child]:text-right',
+      )}
+      {...props}
+    />
+  );
+}
 
-  > label:first-child {
-    min-width: 100px;
-    text-align: right;
-  }
-`;
+export function PreviewBox({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
+  return (
+    <div
+      className={clsx(className, '[&_h4]:text-md pb-6 [&_h1]:mb-2 [&_h1]:text-lg [&_h4]:mb-3')}
+      {...props}
+    />
+  );
+}
 
-export const PreviewBox = styled.div`
-  padding: 20px 0;
-`;
+export function PerformanceBox({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
+  return <div className={clsx(className, 'mb-5 flex flex-wrap gap-2')} {...props} />;
+}
 
-export const PerformanceBox = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 20px;
-  gap: 8px;
-`;
+export function Paragraph({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
+  return <div className={clsx(className, 'my-3')} {...props} />;
+}
 
-export const SectionBox = styled.div`
-  margin-bottom: 12px;
-`;
+export function SectionBox({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
+  return (
+    <div
+      className={clsx(className, 'mb-3 rounded border border-slate-200 p-4 last:mb-0')}
+      {...props}
+    />
+  );
+}
 
-export const ButtonList = styled.div`
-  display: flex;
-  gap: 10px;
-  margin-bottom: 12px;
-`;
+export function ButtonList({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
+  return <div className={clsx(className, 'mb-3 flex flex-wrap items-center gap-2.5')} {...props} />;
+}

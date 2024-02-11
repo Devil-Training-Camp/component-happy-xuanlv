@@ -4,14 +4,15 @@ import clsx from 'clsx';
 import type { HappyDialogProps } from './types';
 import useDestroyOnHidden from '../hooks/useDestroyOnHidden';
 import useAnimationVisible from '../hooks/useAnimationVisible';
-import { useModalAnimationOrigin } from './hooks';
+import useAnimationOrigin from './useAnimationOrigin';
 import { MountHandler } from './MountHandler';
+import { getEnterFn, getLeaveFn } from './utils';
 import styles from './HappyDialog.module.less';
 
 /**
  * 基础弹窗
  */
-export default function HappyDialog({
+function HappyDialog({
   afterOpen,
   afterClose,
   centered,
@@ -29,21 +30,30 @@ export default function HappyDialog({
   width = 416,
   wrapClassName,
   zIndex,
-  animation,
+  animationEnter,
+  animationLeave,
+  rootAttrs,
 }: HappyDialogProps) {
+  const rootRef = useRef<HTMLDivElement>(null);
   const modalRef = useRef<HTMLDivElement>(null);
+  const container = getContainer();
+
+  // 打开前动画生成
+  const getTransform = useAnimationOrigin(modalRef, visible);
   // 动画处理：弹窗关闭触发关闭动画
-  const { realVisible, activeAnimation, onAnimationEnd } = useAnimationVisible(
+  const realVisible = useAnimationVisible(
+    modalRef,
     visible,
+    animationEnter || getEnterFn(getTransform),
+    animationLeave || getLeaveFn(getTransform),
     afterOpen,
     afterClose,
   );
-  const container = getContainer();
+  // 进行中的动画
+  const action = visible ? 'enter' : realVisible ? 'leave' : undefined;
 
   // 关闭时销毁 Modal 里的子元素
   const shouldMount = useDestroyOnHidden(destroyOnClose, realVisible);
-  // 动画指向
-  const { transformOrigin, onModalElementRef } = useModalAnimationOrigin(visible, container);
 
   const modalElement = shouldMount ? (
     <div
@@ -52,14 +62,15 @@ export default function HappyDialog({
       tabIndex={-1}
       // Escape 键取消
       onKeyDown={(evt) => keyboard && evt.key === 'Escape' && onCancel?.()}
-      ref={modalRef}
+      ref={rootRef}
+      {...rootAttrs}
     >
-      {realVisible && <MountHandler modalRef={modalRef} getContainer={getContainer} />}
+      {realVisible && <MountHandler rootRef={rootRef} container={container} />}
       {mask && (
         <div
           className={clsx(styles.happyModalMask, {
-            [styles.fadeIn]: activeAnimation === 'enter',
-            [styles.fadeOut]: activeAnimation === 'leave',
+            [styles.fadeIn]: action === 'enter',
+            [styles.fadeOut]: action === 'leave',
           })}
           style={maskStyle}
         />
@@ -71,18 +82,10 @@ export default function HappyDialog({
         onClick={maskClosable ? onCancel : undefined}
       >
         <div
-          className={clsx(styles.happyModal, className, {
-            [animation?.in ?? styles.animateIn]: activeAnimation === 'enter',
-            [animation?.out ?? styles.animateOut]: activeAnimation === 'leave',
-          })}
-          onAnimationEnd={onAnimationEnd}
-          ref={onModalElementRef}
+          className={clsx(styles.happyModal, className)}
+          ref={modalRef}
           role="dialog"
-          style={{
-            transformOrigin,
-            width,
-            ...style,
-          }}
+          style={{ width, ...style }}
           onClick={(e) => e.stopPropagation()}
         >
           {children}
@@ -95,3 +98,5 @@ export default function HappyDialog({
     ? createPortal(modalElement, container)
     : null;
 }
+
+export default HappyDialog;

@@ -18,7 +18,6 @@
     "noUnusedLocals": true,
     "noImplicitAny": true,
     "resolveJsonModule": true,
-    "suppressImplicitAnyIndexErrors": true,
     "isolatedModules": true,
     "noEmitOnError": true,
     "declaration": true,

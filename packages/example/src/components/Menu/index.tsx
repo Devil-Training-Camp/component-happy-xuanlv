@@ -3,7 +3,6 @@ import type { RouteObject } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import clsx from 'clsx';
 import { routeConfig } from '@/routes';
-import styles from './Menu.module.less';
 
 /**
  * 生成菜单
@@ -21,7 +20,11 @@ function generateMenu(originList: RouteObject[], pathList: string[]): React.Reac
       <NavLink
         key={routePath}
         to={routePath}
-        className={({ isActive }) => clsx(styles.link, { [styles.active]: isActive })}
+        className={({ isActive }) =>
+          clsx('hover:text-primary-5 relative block truncate py-2', {
+            'text-primary bg-primary-1 border-primary border-r-2': isActive,
+          })
+        }
         style={{ paddingLeft: indentation }}
       >
         Index
@@ -30,13 +33,21 @@ function generateMenu(originList: RouteObject[], pathList: string[]): React.Reac
       <NavLink
         key={routePath}
         to={routePath}
-        className={({ isActive }) => clsx(styles.link, { [styles.active]: isActive })}
+        className={({ isActive }) =>
+          clsx('hover:text-primary-5 relative block truncate py-2', {
+            'text-primary bg-primary-1 border-primary border-r-2': isActive,
+          })
+        }
         style={{ paddingLeft: indentation }}
       >
         {route.path}
       </NavLink>
     ) : isRoot ? null : (
-      <p className={styles.caption} key={route.path} style={{ paddingLeft: indentation }}>
+      <p
+        className="mb-2 mt-5 pl-8 text-sm text-slate-400"
+        key={route.path}
+        style={{ paddingLeft: indentation }}
+      >
         {route.path}
       </p>
     );
@@ -57,5 +68,5 @@ function generateMenu(originList: RouteObject[], pathList: string[]): React.Reac
 const menuNode = generateMenu(routeConfig, []);
 
 export default function Menu() {
-  return <div className={styles.menu}>{menuNode}</div>;
+  return <div className="flex flex-col py-5 text-slate-800">{menuNode}</div>;
 }

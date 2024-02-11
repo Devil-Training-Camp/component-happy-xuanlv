@@ -1,5 +1,32 @@
 @import '@xuan/components/src/style/variable-default';
 
-* {
-  box-sizing: border-box;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.svg-icon {
+  display: inline-block;
+  font-size: @happy-font-size-base;
+  vertical-align: middle;
+  fill: currentcolor;
+
+  &-large {
+    font-size: @happy-font-size-lg;
+  }
+
+  &-small {
+    font-size: @happy-btn-font-size-sm;
+  }
+
+  &[disabled] {
+    color: @happy-disabled-color;
+    pointer-events: none;
+    cursor: not-allowed;
+    user-select: none;
+  }
+
+  &[tabindex] {
+    cursor: pointer;
+  }
 }

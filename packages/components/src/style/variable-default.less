@@ -46,6 +46,12 @@
 
 @icon-color-hover: fade(@black, 75%);
 
+@tooltip-max-width: 250px;
+@tooltip-color: #fff;
+@tooltip-bg: rgb(0 0 0 / 75%);
+@tooltip-arrow-width: 5px;
+@tooltip-white-color: @happy-text-color;
+
 // Buttons
 @btn-font-weight: 400;
 @btn-border-radius-base: @happy-border-radius-base;
@@ -119,6 +125,19 @@
 @background-color-base: hsv(0, 0, 96%); // Default grey background color
 @background-color-light: hsv(0, 0, 98%); // background of header and selected item
 @disabled-bg: @background-color-base;
+
+// HappyNotification
+@notification-message-font-weight: 600;
+@notification-width: 384px;
+@notification-box-shadow:
+  0px 9px 28px 0px rgba(0 0 0 / 5%),
+  0px 6px 16px 0px rgba(0 0 0 / 8%),
+  0px 3px 6px 0px rgba(0 0 0 / 12%);
+
+@message-zIndex: 1010;
+@message-max-width: 640px;
+@message-icon-size: 16px;
+@message-content-gutter: 32px;
 
 @zIndex-modal: 1000;
 
@@ -342,3 +361,34 @@
 @happy-spin-dot-size-lg: var(--ux-spin-dot-size-lg, @spin-dot-size-lg);
 @happy-spin-mask-bg: var(--ux-spin-mask-bg, rgb(255 255 255 / 50%));
 @happy-spin-index: var(--ux-spin-index, 4);
+
+
+// HappyTooltip
+@happy-tooltip-max-width: var(--ux-tooltip-max-width, @tooltip-max-width);
+@happy-tooltip-arrow-width: var(--ux-tooltip-arrow-width, @tooltip-arrow-width);
+@happy-tooltip-dark-color: var(--ux-tooltip-dark-color, @tooltip-color);
+@happy-tooltip-dark-bg: var(--ux-tooltip-dark-bg, @tooltip-bg);
+@happy-tooltip-white-color: var(--ux-tooltip-white-color, @tooltip-white-color);
+@happy-tooltip-white-bg: var(--ux-tooltip-white-bg, @component-background);
+
+
+// HappyMessage
+@happy-message-zIndex: var(--ux-message-zIndex, @message-zIndex);
+@happy-message-max-width: var(--ux-message-max-width, @message-max-width);
+@happy-message-icon-size: var(--ux-message-icon-size, @message-icon-size);
+@happy-message-content-gutter: var(--ux-message-content-gutter, @message-content-gutter);
+
+// HappyNotification
+@happy-notification-message-font-size: var(
+  --ux-notification-message-font-size,
+    @font-size-lg + 2px
+);
+@happy-notification-message-color: var(--ux-notification-message-color, @happy-heading-color);
+@happy-notification-message-font-weight: var(
+  --ux-notification-message-font-weight,
+  @notification-message-font-weight
+);
+@happy-notification-zIndex: var(--ux-notification-zIndex, @message-zIndex);
+@happy-notification-width: var(--ux-notification-width, @notification-width);
+@happy-notification-close-icon: var(--ux-notification-close-icon, @font-size-lg + 2px);
+@happy-notification-shadow: var(--ux-notification-shadow, @notification-box-shadow);

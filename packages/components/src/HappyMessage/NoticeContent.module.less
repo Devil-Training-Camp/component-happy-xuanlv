@@ -1,0 +1,65 @@
+@import '../style/variable-default';
+@import '../style/animation';
+
+.noticeContent {
+  display: flex;
+  align-items: center;
+  max-width: @happy-message-max-width;
+  padding: @happy-padding-xs @happy-padding-md;
+  margin-top: 16px;
+  pointer-events: all;
+  background: @happy-component-background;
+  border-radius: @happy-border-radius-base;
+  box-shadow: @happy-box-shadow-base;
+  animation: pull-in @happy-animation-base 0.4s both;
+}
+
+.icon {
+  line-height: 1.2;
+
+  svg {
+    margin-right: @happy-padding-xs;
+    font-size: @happy-message-icon-size;
+  }
+}
+
+.content {
+  flex: 1;
+  font-size: @happy-font-size-lg;
+  line-height: 1.8;
+  color: @happy-text-color;
+}
+
+.closeIcon {
+  flex: none;
+  margin-left: @happy-message-content-gutter;
+  font-size: @happy-message-icon-size;
+  color: @happy-text-color;
+
+  &:hover {
+    color: @happy-error-color;
+  }
+}
+
+.extra {
+  flex: none;
+  margin-left: @happy-message-content-gutter;
+  font-size: @happy-font-size-lg;
+  line-height: 1.8;
+}
+
+.infoIcon {
+  color: @happy-info-color;
+}
+
+.successIcon {
+  color: @happy-success-color;
+}
+
+.errorIcon {
+  color: @happy-error-color;
+}
+
+.warnIcon {
+  color: @happy-warning-color;
+}

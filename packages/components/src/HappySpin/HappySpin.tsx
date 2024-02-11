@@ -14,6 +14,7 @@ const HappySpin: React.FC<HappySpinProps> = ({
   tip,
   className,
   style,
+  ...restProps
 }) => {
   return (
     <div
@@ -24,6 +25,7 @@ const HappySpin: React.FC<HappySpinProps> = ({
         [styles.full]: full,
       })}
       style={delay ? { ...style, animationDelay: `${delay}ms` } : style}
+      {...restProps}
     >
       {indicator || (
         <svg viewBox="0 0 1024 1024" width="1em" height="1em">

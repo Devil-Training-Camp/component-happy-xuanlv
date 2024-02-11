@@ -1,43 +1,55 @@
-import { useLayoutEffect, useState } from 'react';
+import type React from 'react';
+import { useRef } from 'react';
+import useDerivedVisible from './useDerivedVisible';
 
 /**
  * 动画关闭处理真实关闭状态
- * 通过 onAnimationEnd 回调实现 leaveCallback
  */
 export default function useAnimationVisible(
+  ref: React.RefObject<HTMLElement>,
   visible: boolean | undefined,
+  animationEnter?: (element: HTMLElement) => Animation,
+  animationLeave?: (element: HTMLElement) => Animation,
   afterOpen?: () => void,
   afterClose?: () => void,
 ) {
-  // 真实状态
-  const [realVisible, setRealVisible] = useState(visible);
-  // 正在进行的动画
-  const [activeAnimation, setActiveAnimation] = useState<'enter' | 'leave'>();
+  const lastAnimation = useRef<Animation>();
 
-  useLayoutEffect(() => {
-    if (visible) {
-      setRealVisible(true);
-      setActiveAnimation('enter');
+  const [realVisible, hide] = useDerivedVisible(visible, (real) => {
+    const element = ref.current;
+    if (!element) {
       return;
     }
-    setActiveAnimation('leave');
-  }, [visible]);
-
-  function onAnimationEnd() {
-    // 重置状态
-    setActiveAnimation(undefined);
-    // 动画结束后触发渲染
-    if (visible) {
-      afterOpen?.();
+    if (!real) {
       return;
     }
-    setRealVisible(false);
-    afterClose?.();
-  }
 
-  return {
-    realVisible,
-    activeAnimation,
-    onAnimationEnd,
-  };
+    lastAnimation.current?.cancel();
+    if (visible) {
+      // 进入动画
+      const animation = animationEnter?.(element);
+      if (!animation) {
+        afterOpen?.();
+        return;
+      }
+      animation.onfinish = afterOpen || null;
+      lastAnimation.current = animation;
+      return;
+    }
+
+    // 离开动画
+    function handleFinish() {
+      hide();
+      afterClose?.();
+    }
+    const animation = animationLeave?.(element);
+    if (!animation) {
+      handleFinish();
+      return;
+    }
+    animation.onfinish = handleFinish;
+    lastAnimation.current = animation;
+  });
+
+  return realVisible;
 }

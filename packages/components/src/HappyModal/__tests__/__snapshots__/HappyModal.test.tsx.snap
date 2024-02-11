@@ -1,0 +1,91 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`HappyModal > 正常渲染 1`] = `
+<div
+  style="overflow: hidden;"
+>
+  <div
+    class="_happyModalRoot_c5e8fd"
+    tabindex="-1"
+  >
+    <div
+      class="_happyModalMask_c5e8fd _fadeIn_c5e8fd"
+    />
+    <div
+      class="_happyModalWrap_c5e8fd"
+    >
+      <div
+        class="_happyModal_c5e8fd"
+        role="dialog"
+        style="width: 416px;"
+      >
+        <span
+          class="_closeButton_472604"
+        >
+          </packages/components/src/icons/icon-close.svg?react
+            classname="_closeIcon_472604"
+          />
+        </span>
+        <div
+          class="_modalContent_a1e552"
+        >
+          Modal Content
+        </div>
+        <div
+          class="_modalFooter_a1e552"
+        >
+          <button
+            class="_happyButton_5fc01e _footerButton_472604"
+            type="button"
+          >
+            取消
+          </button>
+          <button
+            class="_happyButton_5fc01e _footerButton_472604 _primary_5fc01e"
+            type="button"
+          >
+            确定
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`HappyModal > 渲染无 footer 1`] = `
+<div
+  style="overflow: hidden;"
+>
+  <div
+    class="_happyModalRoot_c5e8fd"
+    tabindex="-1"
+  >
+    <div
+      class="_happyModalMask_c5e8fd _fadeIn_c5e8fd"
+    />
+    <div
+      class="_happyModalWrap_c5e8fd"
+    >
+      <div
+        class="_happyModal_c5e8fd"
+        role="dialog"
+        style="width: 416px;"
+      >
+        <span
+          class="_closeButton_472604"
+        >
+          </packages/components/src/icons/icon-close.svg?react
+            classname="_closeIcon_472604"
+          />
+        </span>
+        <div
+          class="_modalContent_a1e552"
+        >
+          Modal Content
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

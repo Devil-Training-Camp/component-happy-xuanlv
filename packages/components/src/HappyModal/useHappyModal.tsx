@@ -3,8 +3,8 @@ import { useMethods } from '@xuan/hooks';
 import type { HappyConfirmProps } from '../confirm/types';
 import type { HappyModalProps } from './types';
 import HappyModal from './HappyModal';
+import confirmBuilder from '../confirm/confirmBuilder';
 import HappyConfirm from '../confirm/HappyConfirm';
-import { happyConfirmBuilder } from '../confirm/confirm';
 
 export interface APIHappyModalProps extends HappyModalProps {
   /**
@@ -20,17 +20,20 @@ export default function useHappyModal() {
   // 每个弹窗唯一 ID
   const modalIdRef = React.useRef(0);
   // 暂存的节点
-  const [holderNodes, setHolderNodes] = React.useState<Map<number, JSX.Element>>(
+  const [holderElementMap, setHolderElementMap] = React.useState<Map<number, React.JSX.Element>>(
     new Map(),
   );
 
-  function createBuilder<Config extends HappyConfirmProps>(config: Config, ModalComponent: React.FC) {
+  function createBuilder<Config extends HappyConfirmProps>(
+    config: Config,
+    ModalComponent: React.FC,
+  ) {
     const currentModalKey = (modalIdRef.current += 1);
 
-    return happyConfirmBuilder(config, (currentConfig) => {
+    return confirmBuilder(config, (currentConfig) => {
       // 更新组件
       if (currentConfig) {
-        setHolderNodes((prevState) => {
+        setHolderElementMap((prevState) => {
           return new Map(prevState).set(
             currentModalKey,
             <ModalComponent key={currentModalKey} {...currentConfig} />,
@@ -40,7 +43,7 @@ export default function useHappyModal() {
       }
 
       // 卸载组件
-      setHolderNodes((prevState) => {
+      setHolderElementMap((prevState) => {
         const currentMap = new Map(prevState);
         currentMap.delete(currentModalKey);
         return currentMap;
@@ -63,5 +66,5 @@ export default function useHappyModal() {
     },
   });
 
-  return [methods, Array.from(holderNodes.values())] as const;
+  return [methods, Array.from(holderElementMap.values())] as const;
 }

@@ -2,8 +2,8 @@ import type { RefObject } from 'react';
 import { useEffect } from 'react';
 
 export interface MountHandlerProps {
-  getContainer: () => HTMLElement;
-  modalRef: RefObject<HTMLDivElement>;
+  container: HTMLElement | undefined;
+  rootRef: RefObject<HTMLDivElement>;
 }
 
 // 容器上的 overflow
@@ -14,29 +14,32 @@ let existCount = 0;
 /**
  * 屏蔽容器滚动
  */
-export function MountHandler({ getContainer, modalRef }: MountHandlerProps) {
+export function MountHandler({ container, rootRef }: MountHandlerProps) {
   useEffect(() => {
+    if (!container) {
+      return undefined;
+    }
     // 聚焦
-    modalRef.current?.focus({ preventScroll: true });
+    rootRef.current?.focus({ preventScroll: true });
     // 弹窗数量递增
     existCount += 1;
 
-    const container = getContainer();
+    const { style } = container;
     // 第一次打开时，暂存容器样式
     if (existCount <= 1) {
-      lastOverflow = container.style.overflow;
+      lastOverflow = style.overflow;
     }
-    container.style.overflow = 'hidden';
+    style.overflow = 'hidden';
 
     return () => {
       existCount -= 1;
 
       // 只有最后一个关闭时，恢复容器样式
       if (existCount <= 0) {
-        container.style.overflow = lastOverflow!;
+        style.overflow = lastOverflow!;
       }
     };
-  }, []);
+  }, [container]);
 
   return null;
 }
